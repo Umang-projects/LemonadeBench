@@ -20,7 +20,7 @@ As local AI becomes more prevalent, developers need robust, easy-to-use tools to
 - **💻 Graceful Degradation Testing:** Proving how Lemonade performs on legacy hardware vs. modern NPUs.
 
 ## 📖 The Story & Motivation (AMD Lemonade Challenge)
-I am an AI Systems engineering student who usually benchmarks Datacenter GPUs (recently writing custom FP8 Triton Kernels for B200 architectures). However, my personal local machine is a **4-year-old Lenovo IdeaPad with a broken screen and a failing keyboard**. 
+I am an AI Systems engineering student who usually benchmarks Datacenter GPUs (recently writing custom FP8 Triton Kernels for B200 architectures). However, my personal local machine is a **4-year-old Lenovo IdeaPad**. 
 
 I started building LemonadeBench to evaluate how well AMD Lemonade optimizes models on heavily constrained, legacy hardware. **The goal?** To prove that Lemonade is highly accessible. 
 
