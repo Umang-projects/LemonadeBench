@@ -1,31 +1,37 @@
 # LemonadeBench
 🍋 A lightweight performance profiling and benchmarking suite for local AI inference using AMD Lemonade. Measures TTFT, TPS, and generates visual analytics.
 
-
 # 🍋 LemonadeBench: The Local AI Profiling Suite
 
-![Status](https://img.shields.io/badge/Status-Active_Development-yellow)
+![Status](https://img.shields.io/badge/Status-Active_Development-green)
 ![Platform](https://img.shields.io/badge/Platform-AMD_Lemonade-blue)
-![Focus](https://img.shields.io/badge/Focus-Performance_Eval-red)
+![License](https://img.shields.io/badge/License-Open_Source-orange)
 
 ## 📌 What is LemonadeBench?
-**LemonadeBench** is an open-source performance evaluation tool built specifically for the **AMD Lemonade** ecosystem. 
+**LemonadeBench** is an open-source performance evaluation and benchmarking client built specifically for the **AMD Lemonade** local AI ecosystem. 
 
-As local AI becomes more prevalent, developers need robust, easy-to-use tools to measure hardware efficiency, bottleneck identification, and token generation speeds. LemonadeBench connects directly to the local Lemonade API to run automated stress tests and generate comparative visual analytics.
+As developers shift towards running LLMs locally, measuring hardware efficiency becomes critical. LemonadeBench connects directly to the local Lemonade API (OpenAI-compatible) to run automated stress tests and generate visual analytics.
 
-## 🎯 Key Features (In Development)
-- **⏱️ TTFT Measurement:** Accurate tracking of *Time To First Token*.
+## 🎯 Key Features
+- **⏱️ TTFT Measurement:** Accurate tracking of *Time To First Token* (crucial for perceived latency).
 - **🚀 TPS Profiling:** Real-time *Tokens Per Second* calculation under varying context lengths.
-- **📊 Visual Analytics:** Automated generation of Matplotlib/Seaborn bar charts comparing different quantizations (e.g., INT4 vs FP16).
-- **💻 Graceful Degradation Testing:** Proving how Lemonade performs on legacy hardware vs. modern NPUs.
+- **📊 Visual Analytics:** Automated generation of Matplotlib bar and line charts to visualize performance across multiple runs.
+- **💾 CSV Export:** Automatically logs benchmark metrics for further analysis.
 
-## 📖 The Story & Motivation (AMD Lemonade Challenge)
-I am an AI Systems engineering student who usually benchmarks Datacenter GPUs (recently writing custom FP8 Triton Kernels for B200 architectures). However, my personal local machine is a **4-year-old Lenovo IdeaPad**. 
+## 📖 The Story (AMD Lemonade Challenge)
+I am an AI Systems engineering student who usually benchmarks Datacenter GPUs (recently wrote custom FP8 Triton Kernels for NVIDIA B200). However, my personal local machine is a old Lenovo IdeaPad. 
 
-I started building LemonadeBench to evaluate how well AMD Lemonade optimizes models on heavily constrained, legacy hardware. **The goal?** To prove that Lemonade is highly accessible. 
+I built LemonadeBench to evaluate how well AMD Lemonade optimizes models. Since my current hardware struggles to natively host large LLMs, I engineered a robust `--mock` mode to test the profiling, CSV export, and graphing pipeline without needing a live server. 
 
-**Why I need the AMD Ryzen™ AI Max+ 395 laptop:**
-While building this tool on my legacy hardware proves Lemonade's excellent fallback capabilities, my ultimate goal is to profile **Strix Halo NPUs and iGPU hybrid acceleration natively**. Winning the Lemonade Developer Challenge would provide the exact hardware needed to evolve this project from a basic API profiler into a full-fledged NPU/iGPU benchmarking suite.
+**My Goal:** Winning the **AMD Ryzen™ AI Max+ 395 laptop** will allow me to run this benchmarking suite natively against real local models, extending it to profile Strix Halo NPUs and iGPU hybrid acceleration properly!
+
+## 🛠️ How to Run
+
+### 1. Installation
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/LemonadeBench.git
+cd LemonadeBench
+pip install -r requirements.txt
 
 ## 🛠️ Current Status
 - [x] Architecture design and metrics definition.
